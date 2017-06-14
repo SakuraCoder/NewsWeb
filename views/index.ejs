@@ -58,7 +58,7 @@ desired effect
 <div class="wrapper">
 
   <!-- Main Header -->
-  <header class="main-header">
+  <header class="main-header" >
 
     <!-- Logo -->
     <a href="index2.html" class="logo">
@@ -228,6 +228,26 @@ desired effect
                     <a class = "link-title" target="_blank" href="<%= data[i].weburl %>">
                         <%= data[i].title %>
                     </a>
+                  </div>
+                  <div class = "extra-box col-md-12">
+                    <div class = "col-md-1 ch-btn">
+                      <button type="button" class="btn btn-block btn-danger btn-sm ty-btn">
+                          <%= data[i].channel %>
+                      </button>
+                    </div>
+
+                    <div class = "col-md-3 src-btn">
+                      <button type="button" class="btn btn-block btn-primary btn-sm sc-btn">
+                          <%= data[i].src %>
+                      </button>
+                    </div>
+
+                    <div class = "col-md-4 time-btn">
+                      <button type="button" class="btn btn-block btn-warning btn-sm tm-btn">
+                          <%= data[i].time %>
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
