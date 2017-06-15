@@ -17,19 +17,36 @@
     clear: both;
     overflow: hidden;
 }
+
+.content:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+
+.content-wrapper:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+
 .img-wrap img{
-    width: 156px;
-    height: 100px;
+    width: 100%;
+    height: auto;
     transition: all .5s ease-out .1s;
 }
 .img-wrap {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 156px;
+    height: 100px;
     line-height: 100px;
     border: 1px solid #e8e8e8;
     background: #e8e8e8;
-
+    overflow:hidden;
     transform-style: preserve-3d;
 }
 
