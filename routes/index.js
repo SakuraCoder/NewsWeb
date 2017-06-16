@@ -8,9 +8,16 @@ router.get('/', function(req, res, next) {
   newslist.newsInfo(function(err,result){
       console.log(result.length);
       console.log(result[0].title);
-      res.render('index', {data: result});
-
+      var toplist = new News({channel:'新闻'});
+      toplist.newsInfo(function(err, result2){
+          console.log(result2.length);
+          console.log(result2[0].title);
+          res.render('index', {data: result, adata: result2});
+      });
   });
+
+
+
 });
 
 module.exports = router;

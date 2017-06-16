@@ -41,7 +41,7 @@ News.prototype.newsInfo = function(callback){
         weburl : this.weburl
     };
 
-    var SELECT_NEWS ="SELECT * FROM news WHERE channel = ?";
+    var SELECT_NEWS ="SELECT * FROM news WHERE channel = ? ORDER BY TIME DESC";
     pool.getConnection(function(err,connection){
         connection.query(SELECT_NEWS,[news.channel],function(err,result){
             if (err) {

@@ -41,11 +41,11 @@
 }
 .img-wrap {
     display: block;
+    border: 1px solid #e8e8e8;
+    background: #e8e8e8;
     width: 156px;
     height: 100px;
     line-height: 100px;
-    border: 1px solid #e8e8e8;
-    background: #e8e8e8;
     overflow:hidden;
     transform-style: preserve-3d;
 }
@@ -126,7 +126,134 @@
     font-size:14px;
 }
 
-aside
+
+.aside-img-wrap img
 {
-    position:fixed;
+
+    width: 100%;
+    height: auto;
+    overflow:hidden;
+    transition: all .5s ease-out .1s;
+}
+
+.aside-img-wrap
+{
+    display: block;
+    border: 1px solid #e8e8e8;
+    background: #e8e8e8;
+    width: 78px;
+    height: 50px;
+    line-height: 50px;
+    overflow:hidden;
+    transform-style: preserve-3d;
+}
+
+.aside-link-title
+{
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+
+.carouselList {
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 300px;
+    background-image: -webkit-linear-gradient(top left,rgba(0,0,0,.3),#000);
+    background-image: linear-gradient(to bottom right,rgba(0,0,0,.3),#000);
+}
+
+.carouselList .carousel-list {
+    width:100%;
+    height:100%;
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+
+.carouselList .carousel-item {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+.carouselList .carousel-item a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.carouselList .carousel-item a img {
+    width: 100%;
+    height: 100%;
+}
+.carouselList .carousel-item .title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 22px;
+    padding-top: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.carouselList .carousel-item .title p
+{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+
+}
+
+.carouselTab {
+    width: 60px;
+    height: 300px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #222;
+    padding: 7px 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tab-list
+{
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+.carouselTab .tab-item {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    line-height: 36px;
+    margin-bottom: 14px;
+    list-style: none;
 }
