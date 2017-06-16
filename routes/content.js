@@ -6,8 +6,8 @@ var News = require('../model/news.js');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-    var newsContent = new News({title: req.query.title});
-    newsContent.getNewsByTitle(function(err,result){
+    var newsContent = new News({newsid: req.query.newsid});
+    newsContent.getNewsById(function(err,result){
         var newslist = new News({channel:'新闻'});
         newslist.newsInfo(function(err, result2){
             res.render('content', {data: result, adata: result2});

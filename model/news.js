@@ -26,8 +26,9 @@ function News(news){
     this.content = news.content;
     this.url = news.url;
     this.weburl = news.weburl;
+    this.newsid = news.newsid;
 }
-News.prototype.getNewsByTitle = function(callback){
+News.prototype.getNewsById = function(callback){
     var news = {
         channel : this.channel,
         title : this.title,
@@ -37,12 +38,13 @@ News.prototype.getNewsByTitle = function(callback){
         pic : this.pic,
         content : this.content,
         url : this.url,
-        weburl : this.weburl
+        weburl : this.weburl,
+        newsid: this.newsid
     };
 
-    var SELECT_NEWS ="SELECT * FROM news WHERE title = ?";
+    var SELECT_NEWS ="SELECT * FROM newstable WHERE newsid = ?";
     pool.getConnection(function(err,connection){
-        connection.query(SELECT_NEWS,[news.title],function(err,result){
+        connection.query(SELECT_NEWS,[news.newsid],function(err,result){
             if (err) {
                 console.log("SELECT_NEWS Error: " + err.message);
                 return;
@@ -66,7 +68,7 @@ News.prototype.newsInfo = function(callback){
         weburl : this.weburl
     };
 
-    var SELECT_NEWS ="SELECT * FROM news WHERE channel = ? ORDER BY TIME DESC";
+    var SELECT_NEWS ="SELECT * FROM newstable WHERE channel = ? ORDER BY TIME DESC";
     pool.getConnection(function(err,connection){
         connection.query(SELECT_NEWS,[news.channel],function(err,result){
             if (err) {
