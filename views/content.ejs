@@ -69,18 +69,18 @@ desired effect
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/">首页 </a></li>
-                        <li><a href="/">财经</a></li>
-                        <li><a href="/">体育</a></li>
-                        <li><a href="/">娱乐</a></li>
-                        <li><a href="/">军事</a></li>
-                        <li><a href="/">教育</a></li>
-                        <li><a href="/">科技</a></li>
-                        <li><a href="/">NBA</a></li>
-                        <li><a href="/">股票</a></li>
-                        <li><a href="/">健康</a></li>
-                        <li><a href="/">星座</a></li>
-                        <li><a href="/">女性</a></li>
+                        <li><a href="/?channel=头条">首页 </a></li>
+                        <li><a href="/?channel=财经">财经</a></li>
+                        <li><a href="/?channel=体育">体育</a></li>
+                        <li><a href="/?channel=娱乐">娱乐</a></li>
+                        <li><a href="/?channel=军事">军事</a></li>
+                        <li><a href="/?channel=教育">教育</a></li>
+                        <li><a href="/?channel=科技">科技</a></li>
+                        <li><a href="/?channel=NBA">NBA</a></li>
+                        <li><a href="/?channel=股票">股票</a></li>
+                        <li><a href="/?channel=健康">健康</a></li>
+                        <li><a href="/?channel=星座">星座</a></li>
+                        <li><a href="/?channel=女性">女性</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -207,8 +207,7 @@ desired effect
                               </div>
                           </div>
                       </div>
-
-                      <div class = "col-md-4 hidden-xs" style = "padding-left:10px; padding-right:10px;padding-top:10px">
+                      <div class = "col-md-4 hidden-xs" style = "padding-left:10px; padding-right:10px; padding-top:10px">
                           <div class = "col-md-12" style = "padding-left:5px; padding-right:0">
                               <div class="box box-danger">
                                   <div class="box-header with-border">
@@ -224,15 +223,15 @@ desired effect
                                       <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                                           <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                                               <div class="col-md-4 col-xs-5" >
-                                                  <% var url = "/content?title=" + adata[i].title;%>
-                                                  <a class="aside-img-wrap" target="_blank" href="<%= url %>">
+                                                  <% var url = "/content?newsid=" + adata[i].newsid;%>
+                                                  <a class="aside-img-wrap" target="_blank" href="<%=url%>">
                                                       <img alt="" src="<%= adata[i].pic %>">
                                                   </a>
                                               </div>
                                               <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                                                   <div class = "title-box" >
-                                                      <% var url = "/content?title=" + adata[i].title;%>
-                                                      <a class = "aside-link-title" target="_blank" href=<%=url %>>
+                                                      <% var aurl = "/content?newsid=" + adata[i].newsid;%>
+                                                      <a class = "aside-link-title" target="_blank" href="<%= aurl%>">
                                                           <%= adata[i].title %>
                                                       </a>
                                                   </div>
@@ -262,23 +261,24 @@ desired effect
                                           <div class="tab-content" style = "padding-bottom: 0">
                                               <div class="tab-pane active" id="tab_1">
                                                   <% for(var i=0, num = 0;num<6;i++){ %>
-                                                  <% if(adata[i].pic == "") { %>
+                                                  <% if(d1[i].pic == "") { %>
                                                   <% continue;%>
                                                   <%}%>
                                                   <%num++;%>
                                                   <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                                                       <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                                                           <div class="col-md-4 col-xs-5" >
-                                                              <% var url = "/content?title=" + adata[i].title;%>
-                                                              <a class="aside-img-wrap" target="_blank" href="<%= url %>">
-                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              <% var aurl = "/content?newsid=" + d1[i].newsid;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%= aurl %>">
+                                                                  <img alt="" src="<%= d1[i].pic %>">
                                                               </a>
                                                           </div>
                                                           <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                                                               <div class = "title-box" >
-                                                                  <% var url = "/content?title=" + adata[i].title;%>
-                                                                  <a class = "aside-link-title" target="_blank" href="<%= url %>">
-                                                                      <%= adata[i].title %>
+
+                                                                  <% var aurl = "/content?newsid=" + d1[i].newsid;%>
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
+                                                                      <%= d1[i].title %>
                                                                   </a>
                                                               </div>
                                                           </div>
@@ -289,23 +289,23 @@ desired effect
                                               <!-- /.tab-pane -->
                                               <div class="tab-pane" id="tab_2">
                                                   <% for(var i=0, num = 0;num<6;i++){ %>
-                                                  <% if(adata[i].pic == "") { %>
+                                                  <% if(d2[i].pic == "") { %>
                                                   <% continue;%>
                                                   <%}%>
                                                   <%num++;%>
                                                   <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                                                       <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                                                           <div class="col-md-4 col-xs-5" >
-                                                              <% var url = "/content?title=" + adata[i].title;%>
-                                                              <a class="aside-img-wrap" target="_blank" href="<%=url %>">
-                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              <% var url = "/content?newsid=" + d2[i].newsid;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%=url%>">
+                                                                  <img alt="" src="<%= d2[i].pic %>">
                                                               </a>
                                                           </div>
                                                           <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                                                               <div class = "title-box" >
-                                                                  <% var url = "/content?title=" + adata[i].title;%>
-                                                                  <a class = "aside-link-title" target="_blank" href="<%= url %>">
-                                                                      <%= adata[i].title %>
+                                                                  <% var aurl = "/content?newsid=" + d2[i].newsid;%>
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
+                                                                      <%= d2[i].title %>
                                                                   </a>
                                                               </div>
                                                           </div>
@@ -316,23 +316,23 @@ desired effect
                                               <!-- /.tab-pane -->
                                               <div class="tab-pane" id="tab_3">
                                                   <% for(var i=0, num = 0;num<6;i++){ %>
-                                                  <% if(adata[i].pic == "") { %>
+                                                  <% if(d3[i].pic == "") { %>
                                                   <% continue;%>
                                                   <%}%>
                                                   <%num++;%>
                                                   <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                                                       <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                                                           <div class="col-md-4 col-xs-5" >
-                                                              <% var url = "/content?title=" + adata[i].title;%>
-                                                              <a class="aside-img-wrap" target="_blank" href="<%= url %>">
-                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              <% var url = "/content?newsid=" + d3[i].newsid;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%=url%>">
+                                                                  <img alt="" src="<%= d3[i].pic %>">
                                                               </a>
                                                           </div>
                                                           <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                                                               <div class = "title-box" >
-                                                                  <% var url = "/content?title=" + adata[i].title;%>
-                                                                  <a class = "aside-link-title" target="_blank" href="<%= url %>">
-                                                                      <%= adata[i].title %>
+                                                                  <% var aurl = "/content?newsid=" + d3[i].newsid;%>
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
+                                                                      <%= d3[i].title %>
                                                                   </a>
                                                               </div>
                                                           </div>
@@ -342,23 +342,23 @@ desired effect
                                               </div>
                                               <div class="tab-pane" id="tab_4">
                                                   <% for(var i=0, num = 0;num<6;i++){ %>
-                                                  <% if(adata[i].pic == "") { %>
+                                                  <% if(d4[i].pic == "") { %>
                                                   <% continue;%>
                                                   <%}%>
                                                   <%num++;%>
                                                   <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                                                       <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                                                           <div class="col-md-4 col-xs-5" >
-                                                              <% var url = "/content?title=" + adata[i].title;%>
-                                                              <a class="aside-img-wrap" target="_blank" href="<%= url %>">
-                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              <% var url = "/content?newsid=" + d4[i].newsid;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%=url%>">
+                                                                  <img alt="" src="<%= d4[i].pic %>">
                                                               </a>
                                                           </div>
                                                           <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                                                               <div class = "title-box" >
-
-                                                                  <a class = "aside-link-title" target="_blank" href="<%= adata[i].weburl %>">
-                                                                      <%= adata[i].title %>
+                                                                  <% var aurl = "/content?newsid=" + d4[i].newsid;%>
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
+                                                                      <%= d4[i].title %>
                                                                   </a>
                                                               </div>
                                                           </div>
