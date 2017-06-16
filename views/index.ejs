@@ -5,13 +5,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="public/css/mycss.css"/>
-  <link rel="stylesheet" type="text/css" href="public/css/mycss.css"/>
-  <link rel="stylesheet" type="text/css" href="public/css/mycss.css"/>
-  <link rel="stylesheet" type="text/css" href="public/css/mycss.css"/>
-  <link rel="stylesheet" type="text/css" href="public/css/mycss.css"/>
-  <link rel="stylesheet" type="text/css" href="public/css/mycss.css"/>
-  <link rel="stylesheet" type="text/css" href="public/css/mycss.css"/>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 2 | Starter</title>
@@ -307,11 +300,20 @@ desired effect
                 <% for(var i=0;i<data.length;i++){ %>
               <div class = news-inner>
                 <div class = "col-md-12 col-xs-12">
-                  <div class="col-md-3 col-xs-5" >
+                    <% if(data[i].pic != "") { %>
+                      <div class="col-md-3 col-xs-5" >
+                        <a class="img-wrap" target="_blank" href="<%= data[i].weburl %>">
+                          <img alt="" src="<%= data[i].pic %>">
+                        </a>
+                      </div>
+
+                    <% } else {%>
+                      <div class="col-md-3 col-xs-5" >
                     <a class="img-wrap" target="_blank" href="<%= data[i].weburl %>">
-                      <img alt="" src="<%= data[i].pic %>">
+                      <img alt="" src="/img/news.jpg">
                     </a>
                   </div>
+                    <%}%>
                   <div class = "col-md-9 col-xs-7" style = "padding-left: 40px">
                     <div class = "title-box" >
 
@@ -326,20 +328,24 @@ desired effect
                         </button>
                       </div>
 
+                        <% if(data[i].src != "") { %>
                       <div class = "col-md-3 src-btn">
                         <button type="button" class="btn btn-block btn-primary btn-sm sc-btn">
                             <%= data[i].src %>
                         </button>
                       </div>
+                      <% } %>
 
+                        <% if(data[i].time != "") { %>
                       <div class = "col-md-4 time-btn">
                         <button type="button" class="btn btn-block btn-warning btn-sm tm-btn">
                             <%= data[i].time %>
                         </button>
                       </div>
-
+                        <% } %>
                     </div>
                   </div>
+
                 </div>
               </div>
                 <%}%>
@@ -356,10 +362,11 @@ desired effect
           </div>
           <div class="box-body">
 
-              <% for(var i=0;i<10;i++){ %>
+              <% for(var i=0, num = 0;num<6;i++){ %>
               <% if(adata[i].pic == "") { %>
               <% continue;%>
               <%}%>
+              <%num++;%>
             <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
               <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                 <div class="col-md-4 col-xs-5" >
@@ -391,18 +398,19 @@ desired effect
             <div class="box-body" style = "padding: 0 0">
               <div class="nav-tabs-custom">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Tab 1</a></li>
-            <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Tab 2</a></li>
-            <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Tab 3</a></li>
-            <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">Tab 4</a></li>
+            <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">财经</a></li>
+            <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">体育</a></li>
+            <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">娱乐</a></li>
+            <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">军事</a></li>
 
           </ul>
-          <div class="tab-content">
+          <div class="tab-content" style = "padding-bottom: 0">
             <div class="tab-pane active" id="tab_1">
-                <% for(var i=0;i<10;i++){ %>
+                <% for(var i=0, num = 0;num<6;i++){ %>
                 <% if(adata[i].pic == "") { %>
                 <% continue;%>
                 <%}%>
+                <%num++;%>
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
@@ -424,10 +432,11 @@ desired effect
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_2">
-                <% for(var i=0;i<10;i++){ %>
+                <% for(var i=0, num = 0;num<6;i++){ %>
                 <% if(adata[i].pic == "") { %>
                 <% continue;%>
                 <%}%>
+                <%num++;%>
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
@@ -449,10 +458,11 @@ desired effect
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_3">
-                <% for(var i=0;i<10;i++){ %>
+                <% for(var i=0, num = 0;num<6;i++){ %>
                 <% if(adata[i].pic == "") { %>
                 <% continue;%>
                 <%}%>
+                <%num++;%>
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
@@ -473,10 +483,11 @@ desired effect
                 <%}%>
             </div>
             <div class="tab-pane" id="tab_4">
-                <% for(var i=0;i<10;i++){ %>
+                <% for(var i=0, num = 0;num<6;i++){ %>
                 <% if(adata[i].pic == "") { %>
                 <% continue;%>
                 <%}%>
+                <%num++;%>
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
