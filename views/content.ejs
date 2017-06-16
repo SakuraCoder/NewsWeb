@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Starter</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+    <link rel="stylesheet" href="/css/mycss.css">
+   <link rel="stylesheet" href="/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/css/skins/skin-black.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-red-light layout-top-nav">
+<div class="wrapper">
+    <header class="main-header">
+        <nav class="navbar navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand"><b>新闻小主播</b></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">首页 </a></li>
+                        <li><a href="/">财经</a></li>
+                        <li><a href="/">体育</a></li>
+                        <li><a href="/">娱乐</a></li>
+                        <li><a href="/">军事</a></li>
+                        <li><a href="/">教育</a></li>
+                        <li><a href="/">科技</a></li>
+                        <li><a href="/">NBA</a></li>
+                        <li><a href="/">股票</a></li>
+                        <li><a href="/">健康</a></li>
+                        <li><a href="/">星座</a></li>
+                        <li><a href="/">女性</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu" id="user-menu">
+                            <div>
+
+                            </div>
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs" id="user-menu-name">Alexander Pierce</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <div id="dropdown-user-name" class="input-lg" style="color: white">
+                                        <p>
+                                            Alexander Pierce - Web Developer
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- Menu Body -->
+                                <!--
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
+                                    </div>
+
+                                </li>-->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="/mainpage" class="btn btn-default btn-flat">证券账户</a>
+                                    </div>
+                                    <div class="pull-left">
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    </div>
+                                    <div class="pull-left">
+                                        <a href="http://112.74.124.145:3001/?session=#" id = "tradeaccount" class="btn btn-default btn-flat">资金账户</a>
+                                    </div>
+
+
+                                    <div class="pull-right">
+                                        <a href="/logout" class="btn btn-default btn-flat" onclick = "clearsession()">登出</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li data-toggle="modal" data-target="#login-modal" id="login-button"><a>登录</a></li>
+                        <li data-toggle="modal" data-target="#login-modal" id="register-button"><a>注册</a></li>
+                      
+                    </ul>
+                </div>
+                <!-- /.navbar-custom-menu -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+  <!-- Left side column. contains the logo and sidebar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+              <!-- Main content -->
+              <section class="content">
+                  <div class = "col-md-12">
+                      <div class = "col-md-1" style = "padding-top:10px"> </div>
+                      <div class = "col-md-7" style = "padding-top:10px">
+                          <div class="box box-default">
+                              <div class="box-header with-border">
+                                    <div class = "col-md-12">
+                                        <span class="article-title"><%=data[0].title %></span>
+                                    </div>
+                                    <div class = "col-md-12">
+                                      <div class = "col-md-1 ch-btn">
+                                          <button type="button" class="btn btn-block btn-danger btn-sm ty-btn">
+                                              <%= data[0].channel %>
+                                          </button>
+                                      </div>
+
+                                      <% if(data[0].src != "") { %>
+                                      <div class = "col-md-3 src-btn">
+                                          <button type="button" class="btn btn-block btn-primary btn-sm sc-btn">
+                                              <%= data[0].src %>
+                                          </button>
+                                      </div>
+                                      <% } %>
+
+                                      <% if(data[0].time != "") { %>
+                                      <div class = "col-md-4 time-btn">
+                                          <button type="button" class="btn btn-block btn-warning btn-sm tm-btn">
+                                              <%= data[0].time %>
+                                          </button>
+                                      </div>
+                                        <% } %>
+                                    </div>
+                              </div>
+                              <div class="box-body">
+                                <% var flag = data[0].content.indexOf(data[0].pic);%>
+                                  <% if(flag < 0) {%>
+                                <img src = <%=data[0].pic%>>
+                                  <% } %>
+                                  <%- data[0].content%>
+
+                              </div>
+                              <div class="box-footer">
+                                  <p class="pull-right"> <b>责任编辑: root </b></p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class = "col-md-4 hidden-xs" style = "padding-left:10px; padding-right:10px;padding-top:10px">
+                          <div class = "col-md-12" style = "padding-left:5px; padding-right:0">
+                              <div class="box box-danger">
+                                  <div class="box-header with-border">
+                                      <h3 class="box-title">24小时热闻</h3>
+                                  </div>
+                                  <div class="box-body">
+
+                                      <% for(var i=0, num = 0;num<6;i++){ %>
+                                      <% if(adata[i].pic == "") { %>
+                                      <% continue;%>
+                                      <%}%>
+                                      <%num++;%>
+                                      <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
+                                          <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
+                                              <div class="col-md-4 col-xs-5" >
+                                                  <% var url = "/content?title=" + adata[i].title;%>
+                                                  <a class="aside-img-wrap" target="_blank" href="<%= url %>">
+                                                      <img alt="" src="<%= adata[i].pic %>">
+                                                  </a>
+                                              </div>
+                                              <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
+                                                  <div class = "title-box" >
+                                                      <% var url = "/content?title=" + adata[i].title;%>
+                                                      <a class = "aside-link-title" target="_blank" href=<%=url %>>
+                                                          <%= adata[i].title %>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <%}%>
+
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div  id = "recommended" class = "col-md-12" style = "padding-left:5px; padding-right:0">
+                              <div class="box box-warning" >
+                                  <div class="box-header with-border">
+                                      <h3 class="box-title">为你推荐</h3>
+                                  </div>
+                                  <div class="box-body" style = "padding: 0 0">
+                                      <div class="nav-tabs-custom">
+                                          <ul class="nav nav-tabs">
+                                              <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">财经</a></li>
+                                              <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">体育</a></li>
+                                              <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">娱乐</a></li>
+                                              <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">军事</a></li>
+
+                                          </ul>
+                                          <div class="tab-content" style = "padding-bottom: 0">
+                                              <div class="tab-pane active" id="tab_1">
+                                                  <% for(var i=0, num = 0;num<6;i++){ %>
+                                                  <% if(adata[i].pic == "") { %>
+                                                  <% continue;%>
+                                                  <%}%>
+                                                  <%num++;%>
+                                                  <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
+                                                      <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
+                                                          <div class="col-md-4 col-xs-5" >
+                                                              <% var url = "/content?title=" + adata[i].title;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%= url %>">
+                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              </a>
+                                                          </div>
+                                                          <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
+                                                              <div class = "title-box" >
+                                                                  <% var url = "/content?title=" + adata[i].title;%>
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= url %>">
+                                                                      <%= adata[i].title %>
+                                                                  </a>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <%}%>
+                                              </div>
+                                              <!-- /.tab-pane -->
+                                              <div class="tab-pane" id="tab_2">
+                                                  <% for(var i=0, num = 0;num<6;i++){ %>
+                                                  <% if(adata[i].pic == "") { %>
+                                                  <% continue;%>
+                                                  <%}%>
+                                                  <%num++;%>
+                                                  <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
+                                                      <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
+                                                          <div class="col-md-4 col-xs-5" >
+                                                              <% var url = "/content?title=" + adata[i].title;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%=url %>">
+                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              </a>
+                                                          </div>
+                                                          <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
+                                                              <div class = "title-box" >
+                                                                  <% var url = "/content?title=" + adata[i].title;%>
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= url %>">
+                                                                      <%= adata[i].title %>
+                                                                  </a>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <%}%>
+                                              </div>
+                                              <!-- /.tab-pane -->
+                                              <div class="tab-pane" id="tab_3">
+                                                  <% for(var i=0, num = 0;num<6;i++){ %>
+                                                  <% if(adata[i].pic == "") { %>
+                                                  <% continue;%>
+                                                  <%}%>
+                                                  <%num++;%>
+                                                  <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
+                                                      <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
+                                                          <div class="col-md-4 col-xs-5" >
+                                                              <% var url = "/content?title=" + adata[i].title;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%= url %>">
+                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              </a>
+                                                          </div>
+                                                          <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
+                                                              <div class = "title-box" >
+                                                                  <% var url = "/content?title=" + adata[i].title;%>
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= url %>">
+                                                                      <%= adata[i].title %>
+                                                                  </a>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <%}%>
+                                              </div>
+                                              <div class="tab-pane" id="tab_4">
+                                                  <% for(var i=0, num = 0;num<6;i++){ %>
+                                                  <% if(adata[i].pic == "") { %>
+                                                  <% continue;%>
+                                                  <%}%>
+                                                  <%num++;%>
+                                                  <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
+                                                      <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
+                                                          <div class="col-md-4 col-xs-5" >
+                                                              <% var url = "/content?title=" + adata[i].title;%>
+                                                              <a class="aside-img-wrap" target="_blank" href="<%= url %>">
+                                                                  <img alt="" src="<%= adata[i].pic %>">
+                                                              </a>
+                                                          </div>
+                                                          <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
+                                                              <div class = "title-box" >
+
+                                                                  <a class = "aside-link-title" target="_blank" href="<%= adata[i].weburl %>">
+                                                                      <%= adata[i].title %>
+                                                                  </a>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <%}%>
+                                              </div>
+                                              <!-- /.tab-pane -->
+                                          </div>
+                                          <!-- /.tab-content -->
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+                  <!-- Your Page Content Here -->
+                  </div>
+
+              </section>
+
+          </div>
+
+
+      </div>
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="/js/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="/js/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="/js/app.min.js"></script>
+
+<script src="/js/script.js"></script>
+
+<script type="text/javascript">
+    function getElementViewTop(element){
+        var actualTop = element.offsetTop;
+        var current = element.offsetParent;
+        while (current !== null){
+            actualTop += current.offsetTop;
+            current = current.offsetParent;
+        }
+        var elementScrollTop=0;
+        if (document.compatMode == "BackCompat"){
+            elementScrollTop=document.body.scrollTop;
+        } else {
+            elementScrollTop=document.documentElement.scrollTop;
+        }
+        return actualTop;
+        //　return actualTop-elementScrollTop;
+    }
+    function getScroll()
+    {
+        var top, left, width, height;
+
+        if (document.documentElement && document.documentElement.scrollTop) {
+            top = document.documentElement.scrollTop;
+            left = document.documentElement.scrollLeft;
+            width = document.documentElement.scrollWidth;
+            height = document.documentElement.scrollHeight;
+        } else if (document.body) {
+            top = document.body.scrollTop;
+            left = document.body.scrollLeft;
+            width = document.body.scrollWidth;
+            height = document.body.scrollHeight;
+        }
+        return { 'top': top, 'left': left, 'width': width, 'height': height };
+    }
+    var rec = document.getElementById('recommended');
+    var posTop = getElementViewTop(rec);
+    window.addEventListener('scroll',function(event){
+        var scrollTop = getScroll().top;
+//        alert(scrollTop);
+//        alert(posTop);
+//          var output = document.getElementById('output');
+//          output.innerHTML = posTop +' '+scrollTop+' '+(posTop-scrollTop);
+        if(posTop>=30 && posTop-scrollTop <= 30)
+        {
+            rec.style.setProperty('position','fixed');
+            rec.style.setProperty('width','30%');
+        }
+        else
+        {
+            rec.style.setProperty('position','relative');
+            rec.style.setProperty('width','100%');
+        }
+
+    },false);
+</script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+</body>
+</html>

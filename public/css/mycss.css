@@ -257,3 +257,10 @@
     margin-bottom: 14px;
     list-style: none;
 }
+
+.article-title {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 48px;
+    color: #222;
+}

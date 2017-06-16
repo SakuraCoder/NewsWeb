@@ -27,6 +27,31 @@ function News(news){
     this.url = news.url;
     this.weburl = news.weburl;
 }
+News.prototype.getNewsByTitle = function(callback){
+    var news = {
+        channel : this.channel,
+        title : this.title,
+        time : this.time,
+        src : this.src,
+        category : this.category,
+        pic : this.pic,
+        content : this.content,
+        url : this.url,
+        weburl : this.weburl
+    };
+
+    var SELECT_NEWS ="SELECT * FROM news WHERE title = ?";
+    pool.getConnection(function(err,connection){
+        connection.query(SELECT_NEWS,[news.title],function(err,result){
+            if (err) {
+                console.log("SELECT_NEWS Error: " + err.message);
+                return;
+            }
+            connection.release();
+            callback(err,result);
+        });
+    });
+}
 
 News.prototype.newsInfo = function(callback){
     var news = {

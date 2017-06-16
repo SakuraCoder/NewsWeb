@@ -302,22 +302,25 @@ desired effect
                 <div class = "col-md-12 col-xs-12">
                     <% if(data[i].pic != "") { %>
                       <div class="col-md-3 col-xs-5" >
-                        <a class="img-wrap" target="_blank" href="<%= data[i].weburl %>">
+                          <% var url = "/content?title=" + data[i].title;%>
+                        <a class="img-wrap" target="_blank" href=<%=url%>>
                           <img alt="" src="<%= data[i].pic %>">
                         </a>
                       </div>
 
                     <% } else {%>
                       <div class="col-md-3 col-xs-5" >
-                    <a class="img-wrap" target="_blank" href="<%= data[i].weburl %>">
+                          <% var url = "/content?title=" + data[i].title;%>
+                        <a class="img-wrap" target="_blank" href=<%=url%>>
                       <img alt="" src="/img/news.jpg">
                     </a>
                   </div>
                     <%}%>
                   <div class = "col-md-9 col-xs-7" style = "padding-left: 40px">
                     <div class = "title-box" >
+                      <% var url = "/content?title=" + data[i].title;%>
 
-                      <a class = "link-title" target="_blank" href="<%= data[i].weburl %>">
+                      <a class = "link-title" target="_blank" href=<%=url%>>
                           <%= data[i].title %>
                       </a>
                     </div>
@@ -370,14 +373,15 @@ desired effect
             <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
               <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                 <div class="col-md-4 col-xs-5" >
-                  <a class="aside-img-wrap" target="_blank" href="<%= adata[i].weburl %>">
+                    <% var url = "/content?title=" + data[i].title;%>
+                  <a class="aside-img-wrap" target="_blank" href=<%=url%>>
                     <img alt="" src="<%= adata[i].pic %>">
                   </a>
                 </div>
                 <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                   <div class = "title-box" >
-
-                    <a class = "aside-link-title" target="_blank" href="<%= adata[i].weburl %>">
+                      <% var aurl = "/content?title=" + adata[i].title;%>
+                    <a class = "aside-link-title" target="_blank" href="<%= aurl%>">
                         <%= adata[i].title %>
                     </a>
                   </div>
@@ -414,14 +418,16 @@ desired effect
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
-                    <a class="aside-img-wrap" target="_blank" href="<%= adata[i].weburl %>">
+                      <% var aurl = "/content?title=" + adata[i].title;%>
+                    <a class="aside-img-wrap" target="_blank" href="<%= aurl %>">
                       <img alt="" src="<%= adata[i].pic %>">
                     </a>
                   </div>
                   <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                     <div class = "title-box" >
 
-                      <a class = "aside-link-title" target="_blank" href="<%= adata[i].weburl %>">
+                        <% var aurl = "/content?title=" + adata[i].title;%>
+                      <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
                           <%= adata[i].title %>
                       </a>
                     </div>
@@ -440,14 +446,15 @@ desired effect
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
-                    <a class="aside-img-wrap" target="_blank" href="<%= adata[i].weburl %>">
+                      <% var url = "/content?title=" + data[i].title;%>
+                    <a class="aside-img-wrap" target="_blank" href=<%=url%>>
                       <img alt="" src="<%= adata[i].pic %>">
                     </a>
                   </div>
                   <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                     <div class = "title-box" >
-
-                      <a class = "aside-link-title" target="_blank" href="<%= adata[i].weburl %>">
+                        <% var aurl = "/content?title=" + adata[i].title;%>
+                      <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
                           <%= adata[i].title %>
                       </a>
                     </div>
@@ -466,14 +473,15 @@ desired effect
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
-                    <a class="aside-img-wrap" target="_blank" href="<%= adata[i].weburl %>">
+                      <% var url = "/content?title=" + data[i].title;%>
+                    <a class="aside-img-wrap" target="_blank" href=<%=url%>>
                       <img alt="" src="<%= adata[i].pic %>">
                     </a>
                   </div>
                   <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                     <div class = "title-box" >
-
-                      <a class = "aside-link-title" target="_blank" href="<%= adata[i].weburl %>">
+                        <% var aurl = "/content?title=" + adata[i].title;%>
+                      <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
                           <%= adata[i].title %>
                       </a>
                     </div>
@@ -491,14 +499,15 @@ desired effect
               <div class = "news-inner" style="padding-top: 5px; padding-bottom: 5px">
                 <div class = "col-md-12 col-xs-12" style = "padding-left: 0px">
                   <div class="col-md-4 col-xs-5" >
-                    <a class="aside-img-wrap" target="_blank" href="<%= adata[i].weburl %>">
+                      <% var url = "/content?title=" + data[i].title;%>
+                    <a class="aside-img-wrap" target="_blank" href=<%=url%>>
                       <img alt="" src="<%= adata[i].pic %>">
                     </a>
                   </div>
                   <div class = "col-md-8 col-xs-7" style = "padding-left: 20px">
                     <div class = "title-box" >
-
-                      <a class = "aside-link-title" target="_blank" href="<%= adata[i].weburl %>">
+                        <% var aurl = "/content?title=" + adata[i].title;%>
+                      <a class = "aside-link-title" target="_blank" href="<%= aurl %>">
                           <%= adata[i].title %>
                       </a>
                     </div>
