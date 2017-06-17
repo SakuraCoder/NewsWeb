@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>新闻小主播</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -261,8 +261,8 @@ desired effect
             <div><br></div>
 
             <div class="form-group">
-              <div class="col-md-3"> </div>
-              <div class="col-md-8">
+              <div class="col-md-3 col-xs-4"> </div>
+              <div class="col-md-8 col-xs-8">
                 <button class="btn btn-danger btn-lg btn-block" id="login-btn">立刻登录</button>
               </div>
               <!--<span><a href="newforgot.html">忘记密码</a></span>-->
@@ -289,11 +289,11 @@ desired effect
                         <div><br></div>
                         <div><br></div>
                         <div class="form-group">
-                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                            <div class="col-md-3 col-xs-4 no-padding text-right">
                                 <label for="bond_id" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">用户名:</label>
-                                <label for="bond_id" style="color: red;">*</label>
+                                <label for="bond_id" style="color: red;" class = "hidden-xs">*</label>
                             </div>
-                            <div class="col-md-8 col-xs-9">
+                            <div class="col-md-8 col-xs-8">
                                 <input type="text" class="form-control input-lg" id="bond_id" name="username" placeholder="请输入用户名(至少6个字符)">
                             </div>
                         </div>
@@ -301,48 +301,48 @@ desired effect
                             <!--<label class="warn col-md-8 col-xs-9 col-md-offset-3 col-xs-offset-3" id="register_error" style="color: red"></label>-->
                         <!--</div>-->
                         <div class="form-group">
-                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                            <div class="col-md-3 col-xs-4 no-padding text-right">
                                 <label for="password1" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">密码:</label>
-                                <label for="bond_id" style="color: red;">*</label>
+                                <label for="bond_id" style="color: red;" class = "hidden-xs">*</label>
                             </div>
-                            <div class="col-md-8 col-xs-9">
+                            <div class="col-md-8 col-xs-8">
                                 <input id="password1" type="password" name="password" class="form-control input-lg" placeholder="请输入密码(至少6个字符，数字或字母)">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                            <div class="col-md-3 col-xs-4 no-padding text-right">
                                 <label for="password2" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">确认密码:</label>
-                                <label for="bond_id" style="color: red;">*</label>
+                                <label for="bond_id" style="color: red;" class = "hidden-xs">*</label>
                             </div>
-                            <div class="col-md-8 col-xs-9">
+                            <div class="col-md-8 col-xs-8">
                                 <input id="password2" type="password"  name="repassword" class="form-control input-lg" placeholder="请再次输入密码" >
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                            <div class="col-md-3 col-xs-4 no-padding text-right">
                                 <label for="phone" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">联系电话:</label>
-                                <label for="bond_id" style="color: red;">*</label>
+                                <label for="bond_id" style="color: red;" class = "hidden-xs">*</label>
                             </div>
-                            <div class="col-md-8 col-xs-9">
+                            <div class="col-md-8 col-xs-8">
                                 <input type="number" class="form-control input-lg" id="phone" name="phone" placeholder="请输入手机号">
                             </div>
                         </div>
                         <div class="form-group" id="email_div">
-                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                            <div class="col-md-3 col-xs-4 no-padding text-right">
                                 <label for="email" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">邮箱:</label>
-                                <label for="bond_id" style="color: red;">*</label>
+                                <label for="bond_id" style="color: red;" class = "hidden-xs">*</label>
                             </div>
-                            <div class="col-md-8 col-xs-9">
+                            <div class="col-md-8 col-xs-8">
                                 <input type="text" class="form-control input-lg" id="email" name="email"  placeholder="请输入邮箱" title="邮箱正确格式：xxx@xxx.com">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-3 col-xs-3">
+                            <div class="col-md-3 col-xs-4">
 
                             </div>
-                            <div class="col-md-8 col-xs-9">
-                                <button class="btn btn-primary btn-lg btn-block">注册</button>
+                            <div class="col-md-8 col-xs-8">
+                                <button class="btn btn-danger btn-lg btn-block">注册</button>
                             </div>
                         </div>
                     </form>
@@ -364,29 +364,29 @@ desired effect
           <form class="form-horizontal" role="form" method = "post" action = "/userinterest"  id="user_form" novalidate="novalidate">
 
             <div class="form-group">
-              <div class = "col-md-12">
-                <div class = "col-md-3">
+              <div class = "col-md-12 col-xs-12">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "finance" value = 5>  财经
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "sports" value = 5> 体育
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "ent" value = 5> 娱乐
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "mil" value = 5> 军事
@@ -397,29 +397,29 @@ desired effect
 
               </div>
 
-              <div class = "col-md-12">
-                <div class = "col-md-3">
+              <div class = "col-md-12 col-xs-12">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "edu" value = 5> 教育
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "tech" value = 5> 科技
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "nba" value = 5> NBA
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "stock" value = 5> 股票
@@ -430,22 +430,22 @@ desired effect
 
               </div>
 
-              <div class = "col-md-12">
-                <div class = "col-md-3">
+              <div class = "col-md-12 col-xs-12">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "health" value = 5> 健康
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "ast" value = 5> 星座
                     </label>
                   </div>
                 </div>
-                <div class = "col-md-3">
+                <div class = "col-md-3 col-xs-3">
                   <div class = "checkbox">
                     <label>
                       <input type = "checkbox" name = "lady" value = 5> 女性
@@ -569,63 +569,10 @@ desired effect
     <!--</section>-->
 
     <!-- Main content -->
-    <section class="content" style = "padding-left:0px">
+    <section class="content" style = "padding-left:0px;padding-right:0px; padding-top: 10px;">
       <div class = "col-md-8" style = "padding-left: 0px; padding-right: 0px;">
-        <!--<div id = "carouse" class = "col-md-12" style = "padding-bottom: 20px;display:none">-->
-          <!--<div style = "background-color: #1a2226; width:65px; height:300px; display:inline-block; float:left">-->
-
-          <!--</div>-->
-          <!--<div class="section-focus-pic" id="section-focus-pic" style = "float:left">-->
-          <!--<div class="pages" data-scro="list">-->
-            <!--<ul>-->
-              <!--<li class="item" style="left:0px;">-->
-                <!--<a href="http://www.17sucai.com/" target="_blank"><img src="/img/1.jpg" width="570" height="300"></a>-->
-                <!--<h3><a href="http://www.17sucai.com/" target="_blank" style="color:#FFF;text-decoration:none;">天安门广场&quot;史上最大花果篮&quot;竣工</a></h3>-->
-                <!--<div></div>-->
-              <!--</li>-->
-              <!--<li class="item">-->
-                <!--<a href="http://www.17sucai.com/" target="_blank"><img src="/img/2.jpg" width="570" height="300"></a>-->
-                <!--<h3><a href="http://www.17sucai.com/" target="_blank" style="color: #FFF; text-decoration:none;">广州:10万元得来一座&quot;圆大厦&quot;</a></h3>-->
-                <!--<div></div>-->
-              <!--</li>-->
-              <!--<li class="item">-->
-                <!--<a href="http://www.17sucai.com/" target="_blank"><img src="/img/3.jpg" width="570" height="300"></a>-->
-                <!--<h3>-->
-                  <!--<a href="http://www.17sucai.com/" target="_blank" style="color: #FFF; text-decoration:none;">-->
-                    <!--百度视频移动端亿万用户的背后-->
-                  <!--</a>-->
-                <!--</h3>-->
-                <!--<div></div>-->
-              <!--</li>-->
-              <!--<li class="item">-->
-                <!--<a href="http://www.17sucai.com/" target="_blank"><img src="/img/3.jpg" width="570" height="300"></a>-->
-                <!--<h3>-->
-                  <!--<a href="http://www.17sucai.com/" target="_blank" style="color: #FFF; text-decoration:none;">-->
-                    <!--百度视频移动端亿万用户的背后-->
-                  <!--</a>-->
-                <!--</h3>-->
-                <!--<div></div>-->
-              <!--</li>-->
-            <!--</ul>-->
-          <!--</div>-->
-          <!--<div class="controler" data-scro="controler">-->
-            <!--<b class="down">1</b>-->
-            <!--<b>2</b>-->
-            <!--<b>3</b>-->
-            <!--<b>4</b>-->
-          <!--</div>-->
-          <!--<div class="controler2" data-scro="controler2">-->
-            <!--<a href="javascript:;" class="prev"><i></i></a>-->
-            <!--<a href="javascript:;" class="next"><i></i></a>-->
-          <!--</div>-->
-
-        <!--</div>-->
-          <!--<div style = "background-color: #1a2226; width:65px; height:300px; display:inline-block; float:left">-->
-
-          <!--</div>-->
-        <!--</div>-->
         <!-- Start WOWSlider.com BODY section -->
-        <div class = "col-md-12" style = "padding-bottom: 20px;display:none" id = "carouse">
+        <div class = "col-md-12" style = "padding-bottom: 10px;padding-right:5px;padding-left:5px;display:none" id = "carouse">
         <div id="wowslider-container1">
           <div class="ws_images"><ul>
                   <% var url = "/content?newsid=" + d1[0].newsid;%>
@@ -647,7 +594,7 @@ desired effect
         </div>
         </div>
         <!-- End WOWSlider.com BODY section -->
-        <div class = "col-md-12">
+        <div class = "col-md-12" style = "padding-left:5px; padding-right:5px">
           <div class="box box-default">
             <!--<div class="box-header with-border">-->
             <!--<h3 class="box-title">头条</h3>-->
@@ -681,15 +628,15 @@ desired effect
                           <%= data[i].title %>
                       </a>
                     </div>
-                    <div class = "extra-box col-md-12">
-                      <div class = "col-md-1 ch-btn">
+                    <div class = "extra-box col-md-12 col-xs-12 hidden-xs">
+                      <div class = "col-md-1 col-xs-2 ch-btn">
                         <button type="button" class="btn btn-block btn-danger btn-sm ty-btn">
                             <%= data[i].channel %>
                         </button>
                       </div>
 
                         <% if(data[i].src != "") { %>
-                      <div class = "col-md-3 src-btn">
+                      <div class = "col-md-3 col-xs-4 src-btn">
                         <button type="button" class="btn btn-block btn-primary btn-sm sc-btn">
                             <%= data[i].src %>
                         </button>
@@ -697,7 +644,7 @@ desired effect
                       <% } %>
 
                         <% if(data[i].time != "") { %>
-                      <div class = "col-md-4 time-btn">
+                      <div class = "col-md-4 col-xs-6 time-btn">
                         <button type="button" class="btn btn-block btn-warning btn-sm tm-btn">
                             <%= data[i].time %>
                         </button>
@@ -716,7 +663,7 @@ desired effect
       </div>
       <div class = "col-md-4 hidden-xs" style = "padding-left:0; padding-right:0">
         <div class = "col-md-12" style = "padding-left:5px; padding-right:0">
-           <div class="box box-danger">
+           <div class="box box-danger" style = "margin-bottom: 10px">
           <div class="box-header with-border">
             <h3 class="box-title">24小时热闻</h3>
           </div>

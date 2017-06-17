@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title><%= data[0].title%></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -180,8 +180,8 @@ desired effect
                         <div><br></div>
 
                         <div class="form-group">
-                            <div class="col-md-3"> </div>
-                            <div class="col-md-8">
+                            <div class="col-md-3 col-xs-3"> </div>
+                            <div class="col-md-8 col-xs-9">
                                 <button class="btn btn-danger btn-lg btn-block" id="login-btn">立刻登录</button>
                             </div>
                             <!--<span><a href="newforgot.html">忘记密码</a></span>-->
@@ -277,23 +277,23 @@ desired effect
     <!-- Content Header (Page header) -->
               <!-- Main content -->
               <section class="content">
-                  <div class = "col-md-12">
-                      <div class = "col-md-1" style = "padding-top:10px"> </div>
-                      <div class = "col-md-7" style = "padding-top:10px">
+                  <div class = "col-md-12 col-xs-12" style = "padding-left:0px; padding-right:0px;">
+                      <div class = "col-md-1 hidden-xs" style = "padding-top:10px"> </div>
+                      <div class = "col-md-7 col-xs-12" style = "padding-top:10px; padding-left:0px; padding-right:0px;">
                           <div class="box box-default">
                               <div class="box-header with-border">
-                                    <div class = "col-md-12">
+                                    <div class = "col-md-12 col-xs-12">
                                         <span class="article-title"><%=data[0].title %></span>
                                     </div>
-                                    <div class = "col-md-12">
-                                      <div class = "col-md-1 ch-btn">
+                                    <div class = "col-md-12 col-xs-12">
+                                      <div class = "col-md-1 col-xs-2 ch-btn">
                                           <button type="button" class="btn btn-block btn-danger btn-sm ty-btn">
                                               <%= data[0].channel %>
                                           </button>
                                       </div>
 
                                       <% if(data[0].src != "") { %>
-                                      <div class = "col-md-3 src-btn">
+                                      <div class = "col-md-3 col-xs-4 src-btn">
                                           <button type="button" class="btn btn-block btn-primary btn-sm sc-btn">
                                               <%= data[0].src %>
                                           </button>
@@ -301,7 +301,7 @@ desired effect
                                       <% } %>
 
                                       <% if(data[0].time != "") { %>
-                                      <div class = "col-md-4 time-btn">
+                                      <div class = "col-md-4 col-xs-6 time-btn">
                                           <button type="button" class="btn btn-block btn-warning btn-sm tm-btn">
                                               <%= data[0].time %>
                                           </button>
