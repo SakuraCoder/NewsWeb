@@ -6,6 +6,12 @@ var News = require('../model/news.js');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
+    var user = req.session.user;
+    console.log("姓名");
+    if(user!=null && user.username != "")
+    {
+        console.log(user.username);
+    }
     var newsContent = new News({newsid: req.query.newsid});
     newsContent.getNewsById(function(err,result){
         console.log(result[0].title);

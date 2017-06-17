@@ -111,42 +111,21 @@ desired effect
                                 </li>
                                 <!-- Menu Body -->
                                 <!--
-                                <li class="user-body">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </div>
-
-                                </li>-->
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="/mainpage" class="btn btn-default btn-flat">证券账户</a>
+                                        <a href="/mainpage" class="btn btn-default btn-flat">个人中心</a>
                                     </div>
-                                    <div class="pull-left">
-                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                    </div>
-                                    <div class="pull-left">
-                                        <a href="http://112.74.124.145:3001/?session=#" id = "tradeaccount" class="btn btn-default btn-flat">资金账户</a>
-                                    </div>
-
 
                                     <div class="pull-right">
-                                        <a href="/logout" class="btn btn-default btn-flat" onclick = "clearsession()">登出</a>
+                                        <a href="/logout" class="btn btn-default btn-flat">登出</a>
                                     </div>
                                 </li>
                             </ul>
                         </li>
 
-                        <li data-toggle="modal" data-target="#login-modal" id="login-button"><a>登录</a></li>
-                        <li data-toggle="modal" data-target="#login-modal" id="register-button"><a>注册</a></li>
+                        <li data-toggle="modal" data-target="#login-modal" id="login-button"><a href = "#">登录</a></li>
+                        <li data-toggle="modal" data-target="#register-modal" id="register-button"><a href = "#">注册</a></li>
                       
                     </ul>
                 </div>
@@ -156,7 +135,143 @@ desired effect
         </nav>
     </header>
   <!-- Left side column. contains the logo and sidebar -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">登录</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" method = "post" action = "/login"  id="login_form" novalidate="novalidate">
 
+                        <div><br></div>
+                        <div><br></div>
+
+                        <div class="form-group">
+                            <div class="col-md-3 col-xs-4 no-padding text-right">
+                                <label for="login_bond_id" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">用户名:</label>
+                            </div>
+                            <div class="col-md-8 col-xs-8">
+                                <input type="text" class="form-control input-lg" id="login_bond_id" name="username" placeholder="请输入用户名(至少6个字符)">
+                            </div>
+                            <!--<label for="user_id" class="col-sm-3 control-label">用户名</label>-->
+                            <!--<div class="col-sm-9">-->
+                            <!--<input type="text" class="form-control" id="user_id" name="user_id" value="{user_id}"-->
+                            <!--placeholder="请输入用户ID">-->
+                            <!--</div>-->
+                        </div>
+                        <div><br></div>
+
+                        <div class="form-group">
+                            <div class="col-md-3 col-xs-4 no-padding text-right">
+                                <label for="login_password" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">密码:</label>
+                            </div>
+                            <div class="col-md-8 col-xs-8" >
+                                <input id="login_password" type="password" name="password" class="form-control input-lg" placeholder="请输入登陆密码(至少6个字符)">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-12 col-xs-12 no-padding">
+                            <label class="warn col-md-9 col-md-offset-3 col-xs-9" id="login_error" style="color: red"></label>
+                        </div>
+
+                        <div><br></div>
+
+                        <div class="form-group">
+                            <div class="col-md-3"> </div>
+                            <div class="col-md-8">
+                                <button class="btn btn-danger btn-lg btn-block" id="login-btn">立刻登录</button>
+                            </div>
+                            <!--<span><a href="newforgot.html">忘记密码</a></span>-->
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--<button type="button" class="close" data-dismiss="modal" id="close-modal" aria-label="Close">x</button>-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">注册</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" method = "post" action = "/register" id="register_form" novalidate="novalidate">
+
+                        <div><br></div>
+                        <div><br></div>
+                        <div class="form-group">
+                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                                <label for="bond_id" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">用户名:</label>
+                                <label for="bond_id" style="color: red;">*</label>
+                            </div>
+                            <div class="col-md-8 col-xs-9">
+                                <input type="text" class="form-control input-lg" id="bond_id" name="username" placeholder="请输入用户名(至少6个字符)">
+                            </div>
+                        </div>
+                        <!--<div class="form-group no-padding">-->
+                        <!--<label class="warn col-md-8 col-xs-9 col-md-offset-3 col-xs-offset-3" id="register_error" style="color: red"></label>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                                <label for="password1" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">密码:</label>
+                                <label for="bond_id" style="color: red;">*</label>
+                            </div>
+                            <div class="col-md-8 col-xs-9">
+                                <input id="password1" type="password" name="password" class="form-control input-lg" placeholder="请输入密码(至少6个字符，数字或字母)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                                <label for="password2" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">确认密码:</label>
+                                <label for="bond_id" style="color: red;">*</label>
+                            </div>
+                            <div class="col-md-8 col-xs-9">
+                                <input id="password2" type="password"  name="repassword" class="form-control input-lg" placeholder="请再次输入密码" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                                <label for="phone" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">联系电话:</label>
+                                <label for="bond_id" style="color: red;">*</label>
+                            </div>
+                            <div class="col-md-8 col-xs-9">
+                                <input type="number" class="form-control input-lg" id="phone" name="phone" placeholder="请输入手机号">
+                            </div>
+                        </div>
+                        <div class="form-group" id="email_div">
+                            <div class="col-md-3 col-xs-3 no-padding text-right">
+                                <label for="email" class="login-pwd input-lg" style="color: rgba(153,153,153,1)">邮箱:</label>
+                                <label for="bond_id" style="color: red;">*</label>
+                            </div>
+                            <div class="col-md-8 col-xs-9">
+                                <input type="text" class="form-control input-lg" id="email" name="email"  placeholder="请输入邮箱" title="邮箱正确格式：xxx@xxx.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3 col-xs-3">
+
+                            </div>
+                            <div class="col-md-8 col-xs-9">
+                                <button class="btn btn-primary btn-lg btn-block">注册</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -397,11 +512,23 @@ desired effect
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<style type="text/css">
+    #register_form label.error {
+        color: Red;
+    }
+</style>
 
+<style type="text/css">
+    #login_form label.error {
+        color: Red;
+    }
+</style>
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.2.3 -->
 <script src="/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.min.js" ></script>
+<script type="text/javascript" src="/js/jquery-form.js" ></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/js/bootstrap.min.js"></script>
 
@@ -468,6 +595,9 @@ desired effect
 
     },false);
 </script>
+
+<script src="/js/register.js" charset="utf-8"></script>
+<script src="/js/login.js" charset="utf-8"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

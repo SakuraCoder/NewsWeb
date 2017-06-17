@@ -3,10 +3,13 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 var content = require('./routes/content');
 var index = require('./routes/index');
-
+var register = require('./routes/register');
+var login = require('./routes/login');
+var logout = require('./routes/logout');
 var app = express();
 
 // view engine setup
@@ -20,9 +23,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret: "keyboad cat",
+    cookie: {
+        maxAge: 60000*10000000
+    },
+    resave: true,
+    saveUninitialized: true
+}));
 
 app.use('/', index);
 app.use('/content', content);
+app.use('/login',login);
+app.use('/logout',logout);
+app.use('/register', register);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
