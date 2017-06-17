@@ -9,6 +9,7 @@ var content = require('./routes/content');
 var index = require('./routes/index');
 var register = require('./routes/register');
 var login = require('./routes/login');
+var userinterest = require('./routes/userinterest');
 var logout = require('./routes/logout');
 var app = express();
 
@@ -37,6 +38,7 @@ app.use('/content', content);
 app.use('/login',login);
 app.use('/logout',logout);
 app.use('/register', register);
+app.use('/userinterest', userinterest);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

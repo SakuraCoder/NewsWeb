@@ -190,7 +190,7 @@ desired effect
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="/mainpage" class="btn btn-default btn-flat">个人中心</a>
+                  <a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#user-modal" id="user-button">个性设置</a>
                 </div>
 
                 <div class="pull-right">
@@ -349,6 +349,135 @@ desired effect
             </div>
         </div>
     </div>
+  <div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">设置你感兴趣的新闻栏目</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form" method = "post" action = "/userinterest"  id="user_form" novalidate="novalidate">
+
+            <div class="form-group">
+              <div class = "col-md-12">
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "finance" value = 5>  财经
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "sports" value = 5> 体育
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "ent" value = 5> 娱乐
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "mil" value = 5> 军事
+                    </label>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class = "col-md-12">
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "edu" value = 5> 教育
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "tech" value = 5> 科技
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "nba" value = 5> NBA
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "stock" value = 5> 股票
+                    </label>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class = "col-md-12">
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "health" value = 5> 健康
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "ast" value = 5> 星座
+                    </label>
+                  </div>
+                </div>
+                <div class = "col-md-3">
+                  <div class = "checkbox">
+                    <label>
+                      <input type = "checkbox" name = "lady" value = 5> 女性
+                    </label>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <!--<label for="user_id" class="col-sm-3 control-label">用户名</label>-->
+              <!--<div class="col-sm-9">-->
+              <!--<input type="text" class="form-control" id="user_id" name="user_id" value="{user_id}"-->
+              <!--placeholder="请输入用户ID">-->
+              <!--</div>-->
+            </div>
+            <div>
+              <br/>
+            </div>
+            <div class="form-group">
+              <div class="col-md-3 col-xs-3">
+
+              </div>
+              <div class="col-md-5 col-xs-9">
+                <button class="btn btn-danger btn-block">提交</button>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
   <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
@@ -383,6 +512,26 @@ desired effect
         <li class="header"></li>
         <!-- Optionally, you can add icons to the links -->
         <li id = "top-news"><a href="/?channel=头条"><i class="fa fa-circle-o" ></i> <span style = "font-size:15px">首页</span></a></li>
+        <% var ctlist =  {
+          '头条' : 'top-news',
+          '财经' : 'finance-news',
+          '体育' : 'sports-news',
+          '娱乐' : 'ent-news',
+          '军事' : 'mil-news',
+          '教育' : 'edu-news',
+          '科技' : 'tech-news',
+          'NBA' : 'nba-news',
+          '股票' : 'stock-news',
+          '健康' : 'health-news',
+          '星座' : 'ast-news',
+          '女性' : 'lady-news'
+        }%>
+          <% if(order.length > 0) {%>
+          <% for(var i =0; i< order.length; i++){%>
+              <% var url = "/?channel=" + order[i].name%>
+              <li id = <%=ctlist[order[i].name]%>><a href=<%=url%>><i class="fa fa-circle-o"></i> <span style = "font-size:15px"><%=order[i].name%></span></a></li>
+          <% }%>
+          <%} else {%>
         <li id = "finance-news"><a href="/?channel=财经"><i class="fa fa-circle-o"></i> <span style = "font-size:15px">财经</span></a></li>
         <li id = "sports-news"><a href="/?channel=体育"><i class="fa fa-circle-o"></i> <span style = "font-size:15px">体育</span></a></li>
         <li id = "ent-news"><a href="/?channel=娱乐"><i class="fa fa-circle-o"></i> <span style = "font-size:15px">娱乐</span></a></li>
@@ -394,7 +543,7 @@ desired effect
         <li id = "health-news"><a href="/?channel=健康"><i class="fa fa-circle-o"></i> <span style = "font-size:15px">健康</span></a></li>
         <li id = "ast-news"><a href="/?channel=星座"><i class="fa fa-circle-o"></i> <span style = "font-size:15px">星座</span></a></li>
         <li id = "lady-news"><a href="/?channel=女性"><i class="fa fa-circle-o"></i> <span style = "font-size:15px">女性</span></a></li>
-<!--         <li><a href="#"><i class="fa fa-circle-o"></i> <span style = "font-size:15px">育儿</span></a></li> -->
+        <%}%>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -583,10 +732,10 @@ desired effect
             <div class="box-body" style = "padding: 0 0">
               <div class="nav-tabs-custom">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">财经</a></li>
-            <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">体育</a></li>
-            <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">娱乐</a></li>
-            <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">军事</a></li>
+            <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true"><%= d1[0].channel%></a></li>
+            <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false"><%= d2[0].channel%></a></li>
+            <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false"><%= d3[0].channel%></a></li>
+            <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false"><%= d4[0].channel%></a></li>
 
           </ul>
           <div class="tab-content" style = "padding-bottom: 0">
@@ -758,7 +907,21 @@ desired effect
 
 <script src="/js/register.js" charset="utf-8"></script>
 <script src="/js/login.js" charset="utf-8"></script>
+<script src="/js/userinterest.js" charset="utf-8"></script>
+<script>
+    $(window).unload( function () {
 
+        $.ajax({
+            type: "GET",
+            url: "/userinterest",
+            data: "",
+            async: false,
+            success: function(result){
+                alert( "Data Saved: " + result.msg );
+            }
+        });
+    });
+</script>
 <script type="text/javascript">
     function getElementViewTop(element){
         var actualTop = element.offsetTop;

@@ -1,5 +1,6 @@
 var express = require('express');
 var User = require("../model/user.js");
+var Userinterest = require("../model/userinterest.js");
 var router = express.Router();
 
 /* GET home page. */
@@ -47,9 +48,20 @@ router.post("/",function(req, res) {
         else{
             if(result[0]['password'] == password)
             {
-                var user = {'username': username};
-                req.session.user = user;//保存用户session信息
-                res.send({code:1, msg:'登录成功', userinfo : user});
+                var useri = new Userinterest({
+                    username : username
+                })
+                useri.userinterestInfo(function(err,result3){
+                    if(err){
+                        console.log("读取失败");
+                    }
+                    else
+                    {
+                        var user = {'username': username, 'userinterest': result3[0]};
+                        req.session.user = user;//保存用户session信息
+                        res.send({code:1, msg:'登录成功', userinfo : user});
+                    }
+                })
             }
             else
             {
@@ -59,7 +71,7 @@ router.post("/",function(req, res) {
                 //res.render('index', {errMsg: ' * 用户名或密码错误' });
             }
         }
-        res.end();
+        // res.end();
     });
 });
 

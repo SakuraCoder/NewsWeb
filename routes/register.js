@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
+var Userinterest = require("../model/userinterest.js");
 var User = require("../model/user.js");
 
 /* GET home page. */
@@ -50,6 +51,14 @@ router.post('/',function(req, res) {
                            return;
                        }
                        else{
+                           var useri = new Userinterest({
+                               username : username
+                           })
+                           useri.userinterestSave(function(err,result3){
+                               if(err){
+                                   console.log("建表失败");
+                               }
+                           })
                            res.locals.status = "success";
                            var user = {'username':username};
                            console.log("注册成功");

@@ -1,9 +1,6 @@
 /**
  * Created by Sakura on 2017/6/17.
  */
-/**
- * Created by pankaicheng on 17/5/19.
- */
 
 jQuery.validator.addMethod(
     "type0",

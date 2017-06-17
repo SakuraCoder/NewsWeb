@@ -1,8 +1,6 @@
 /**
  * Created by Sakura on 2017/6/17.
  */
-/*Author: Zihan Zhao of A1
- Modified: Initial status changed to "OpenApply 6/1/2017"*/
 var mysql = require('mysql');
 var pool = mysql.createPool({
  host : '127.0.0.1',

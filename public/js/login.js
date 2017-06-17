@@ -23,6 +23,7 @@ $().ready(function () {
                     else if (result.code ==1){
                         alert("登录成功");
                             //alert(sessionid);
+                        window.location.href = "/";
                         $('#login-modal').modal('hide');
                         $("#login-button").hide();
                         $("#register-button").hide();
@@ -30,6 +31,7 @@ $().ready(function () {
                         $("#usermenu").text(result.userinfo.username);
                         $("#user-menu-name").text(result.userinfo.username);
                         $("#dropdown-user-name").text(result.userinfo.username);
+
 
 
                     }
